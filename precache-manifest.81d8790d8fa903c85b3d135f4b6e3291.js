@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bd2633ea0a315d008168f04e1eb3e204",
+    "revision": "1b025abd231b2da5364c84f434457322",
     "url": "/index.html"
   },
   {
-    "revision": "e724ed81de890051db65",
+    "revision": "9832760a5bb3fe7956a2",
     "url": "/static/css/main.7600fda5.chunk.css"
   },
   {
@@ -12,15 +12,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.7bd5cbee.chunk.js"
   },
   {
-    "revision": "e724ed81de890051db65",
-    "url": "/static/js/main.cfb403d9.chunk.js"
+    "revision": "9832760a5bb3fe7956a2",
+    "url": "/static/js/main.3330844c.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
     "url": "/static/js/runtime~main.a8a9905a.js"
   },
   {
-    "revision": "19681a5e916e8e30ed3b4ce88c181748",
-    "url": "/static/media/JA Logo.19681a5e.svg"
+    "revision": "89c8dd074d3f1624a7441f10d28e3d98",
+    "url": "/static/media/JA Logo.89c8dd07.svg"
   }
 ]);
