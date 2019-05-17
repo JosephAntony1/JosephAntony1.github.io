@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.9.3",
+    "office-ui-fabric-react": "^6.182.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
+    "react-typing-animation": "^1.6.2",
     "serve": "^11.0.0"
   },
   "scripts": {
