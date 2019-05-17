@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import logo from "./JA Logo.svg";
-import Header from "./Header";
+import Header from "./components/Header";
 import { PrimaryButton } from "office-ui-fabric-react";
 import Typing from 'react-typing-animation';
 
