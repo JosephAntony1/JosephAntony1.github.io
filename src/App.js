@@ -11,8 +11,13 @@ function App() {
       <Header />
       <img src={logo} className="App-logo" alt="logo" />
       <body class="ms-Fabric" dir="ltr">
+
+      <Typing>
+
         <span class="ms-font-su ms-fontColor-themePrimary">Big blue text</span>
-      </body>
+
+        </Typing>
+
       <PrimaryButton>Sup</PrimaryButton>
 
       <Typing>
@@ -22,7 +27,9 @@ function App() {
           then this will be typed.
         </div>
       </Typing>
+    </body>
     </div>
+
   );
 }
 
