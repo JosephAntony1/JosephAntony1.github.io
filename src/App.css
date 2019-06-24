@@ -1,7 +1,15 @@
+
 .App {
   text-align: center;
 }
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.panel {
+  height: 100em;
+  width: 100%;
+  background-color: #393939;
+
 }
