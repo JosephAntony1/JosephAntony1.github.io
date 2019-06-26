@@ -55,11 +55,27 @@ class App extends React.Component {
                   layers={layers}
                   style={{ height: "100vh" }}
                 >
-                  <span className="ms-fontSize-68 parallaxChildren">
-                    <img src={Logo} alt={Logo} style={{ height: "50vh" }} />
+                  <span className="parallaxChildren" style={{ color: "white" }}>
+                    <img src={Logo} alt={Logo} style={{ width: this.state.width / 3 }} />
 
-                    <h1 style={{ color: "#750b1c" }}>Joseph Antony</h1>
-                    <h5 style={{ color: "#460711" }}>An interactive resume</h5>
+                    <h1
+                      style={{
+                        color: "black",
+                        WebkitTextStroke: "1px #605e5c",
+                        fontSize: this.state.width / 13
+                      }}
+                    >
+                      Joseph Antony
+                    </h1>
+                    <h5
+                      style={{
+                        color: "white",
+                        WebkitTextStroke: ".4px #605e5c",
+                        fontSize: this.state.width / 22
+                      }}
+                    >
+                      An interactive resume
+                    </h5>
                   </span>
                 </ParallaxBanner>
               </div>
@@ -67,9 +83,8 @@ class App extends React.Component {
             <Plx
               parallaxData={[
                 {
-                  start: this.state.height - 500,
-                  end: 700,
-                  duration: "10%",
+                  start: "10%",
+                  end: "50%",
                   properties: [
                     {
                       startValue: 0,
