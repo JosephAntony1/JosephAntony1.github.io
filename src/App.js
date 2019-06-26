@@ -6,8 +6,10 @@ import Fade from "react-reveal/Fade";
 import ScrollableAnchor from "react-scrollable-anchor";
 import { StickyContainer, Sticky } from "react-sticky";
 import { ParallaxProvider, ParallaxBanner } from "react-scroll-parallax";
-import BG from "./images/IMG_3336.jpg";
-import FG from "./images/arlington.png";
+import BG from "./images/bg.png";
+import FG from "./images/fg.png";
+import M1 from "./images/m1.png";
+import M2 from "./images/m2.png";
 import Logo from "./JA_Logo.svg";
 import styles from "./ParallaxBanner.scss";
 import Plx from "react-plx";
@@ -38,6 +40,14 @@ class App extends React.Component {
         amount: 0.6
       },
       {
+        image: M2,
+        amount: 0.4
+      },
+      {
+        image: M1,
+        amount: 0.3
+      },
+      {
         image: FG,
         amount: 0.2
       }
@@ -55,14 +65,17 @@ class App extends React.Component {
                   layers={layers}
                   style={{ height: "100vh" }}
                 >
-                  <span className="parallaxChildren" style={{ color: "white" }}>
-                    <img src={Logo} alt={Logo} style={{ width: this.state.width / 3 }} />
-
+                  <span className="parallaxChildren">
+                    <img
+                      src={Logo}
+                      alt={Logo}
+                      style={{ height: this.state.width / 4 }}
+                    />
                     <h1
                       style={{
-                        color: "black",
                         WebkitTextStroke: "1px #605e5c",
-                        fontSize: this.state.width / 13
+                        fontSize: this.state.width / 13,
+                        color: "black"
                       }}
                     >
                       Joseph Antony
@@ -80,11 +93,13 @@ class App extends React.Component {
                 </ParallaxBanner>
               </div>
             </div>
-            <Plx
+            <br />
+            <br />
+            <Plx className={styles.customChild}
               parallaxData={[
                 {
-                  start: "10%",
-                  end: "50%",
+                  start: 0.45 * this.state.height,
+                  end: 0.9 * this.state.height,
                   properties: [
                     {
                       startValue: 0,
@@ -97,6 +112,10 @@ class App extends React.Component {
             >
               <img src={Logo} alt={Logo} style={{ height: "20vh" }} />
             </Plx>
+
+            <br/><br/>
+
+
             <img src={Logo} alt={Logo} style={{ height: "100vh" }} />
           </div>
         </Fade>
