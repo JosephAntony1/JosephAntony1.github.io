@@ -57,7 +57,7 @@ class App extends React.Component {
                 <Parallax>
                   <img src={Logo} alt={Logo} style={{ height: "20vh" }} />
                 </Parallax>
-                
+
               </div>
             </div>
           </div>
