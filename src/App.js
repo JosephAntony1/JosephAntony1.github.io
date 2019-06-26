@@ -5,7 +5,12 @@ import { CSSTransitionGroup } from "react-transition-group"; // ES6
 import Fade from "react-reveal/Fade";
 import ScrollableAnchor from "react-scrollable-anchor";
 import { StickyContainer, Sticky } from "react-sticky";
-import { ParallaxProvider, ParallaxBanner} from "react-scroll-parallax";
+import { ParallaxProvider, ParallaxBanner, Parallax} from "react-scroll-parallax";
+import BG from "./images/IMG_3336.jpg";
+import FG from "./images/arlington.png";
+import Logo from "./JA_Logo.svg";
+import styles from "./ParallaxBanner.scss";
+import "./styles.scss";
 
 class App extends React.Component {
   constructor(props) {
@@ -14,34 +19,50 @@ class App extends React.Component {
   }
 
   render() {
+    const layers = [
+      {
+        image: BG,
+        amount: 0.6
+      },
+      {
+        image: FG,
+        amount: 0.2
+      }
+    ];
     return (
-      <Fade>
-        <ParallaxProvider>
+      <ParallaxProvider>
+        <Fade>
           <div className="App">
-            {({ style }) => <div style={style} />}
-            <a href="#home"> Go to home </a>
-            <a href="#section2"> Go to section 2 </a>
-            <ParallaxBanner
-              className="Banner"
-              layers={[
-                {
-                  image: "./JA Logo.svg",
-                  amount: 0.1
-                },
-                {
-                  image: "./JA Logo.svg",
-                  amount: 0.2
-                }
-              ]}
-              style={{
-                height: "500px"
-              }}
-            >
-              <h1>Banner Children</h1>
-            </ParallaxBanner>
+            <div className="vertical">
+              <div className={styles.bannerContainer}>
+                <ParallaxBanner
+                  className={styles.bannerBg}
+                  layers={layers}
+                  style={{ height: "100vh" }}
+                >
+                  <span
+                    className="ms-fontSize-68  parallaxChildren"
+                    style={{ color: "white" }}
+                  >
+                    <img
+                      src={Logo}
+                      alt={Logo}
+                      style={{ height: "50vh", fill: "green" }}
+                    />
+
+                    <h1 style={{ color: "black" }}>Joseph Antony</h1>
+                    <h5>An interactive resume</h5>
+                  </span>
+                </ParallaxBanner>
+                <Parallax>
+                  <img src={Logo} alt={Logo} style={{ height: "20vh" }} />
+                </Parallax>
+                
+              </div>
+            </div>
           </div>
-        </ParallaxProvider>
-      </Fade>
+        </Fade>
+      </ParallaxProvider>
     );
   }
 }
