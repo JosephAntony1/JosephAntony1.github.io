@@ -4,7 +4,6 @@ import Typing from "react-typing-animation";
 import { CSSTransitionGroup } from "react-transition-group"; // ES6
 import Fade from "react-reveal/Fade";
 import ScrollableAnchor from "react-scrollable-anchor";
-import { StickyContainer, Sticky } from "react-sticky";
 import { ParallaxProvider, ParallaxBanner } from "react-scroll-parallax";
 import BG from "./images/bg.png";
 import FG from "./images/fg.png";
@@ -13,7 +12,7 @@ import M2 from "./images/m2.png";
 import Logo from "./JA_Logo.svg";
 import styles from "./ParallaxBanner.scss";
 import Plx from "react-plx";
-
+import Resume from "./components/resume.js";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -52,73 +51,134 @@ class App extends React.Component {
         amount: 0.2
       }
     ];
+    let direction;
+    if (this.state.width > this.state.height) {
+      direction = "w";
+    } else {
+      direction = "h";
+    }
     return (
       <ParallaxProvider>
-        <Fade>
-          <div className="App">
-            <link rel="stylesheet" href="fabric.css" />
-
-            <div className="vertical">
-              <div className={styles.bannerContainer}>
-                <ParallaxBanner
-                  className={styles.bannerBg}
-                  layers={layers}
-                  style={{ height: "100vh" }}
-                >
-                  <span className="parallaxChildren">
-                    <img
-                      src={Logo}
-                      alt={Logo}
-                      style={{ height: this.state.width / 4 }}
-                    />
-                    <h1
-                      style={{
-                        WebkitTextStroke: "1px #605e5c",
-                        fontSize: this.state.width / 13,
-                        color: "black"
-                      }}
-                    >
-                      Joseph Antony
-                    </h1>
-                    <h5
-                      style={{
-                        color: "white",
-                        WebkitTextStroke: ".4px #605e5c",
-                        fontSize: this.state.width / 22
-                      }}
-                    >
-                      An interactive resume
-                    </h5>
-                  </span>
-                </ParallaxBanner>
-              </div>
+        <div className="App  ms-Fabric">
+          <Fade>
+            <div className={styles.bannerContainer}>
+              <ParallaxBanner
+                className={styles.bannerBg}
+                layers={layers}
+                style={{ height: "100vh" }}
+              >
+                <span className="parallaxChildren ms-font-su">
+                  <img
+                    src={Logo}
+                    alt={Logo}
+                    style={{ height: "25v"+direction }}
+                  />
+                  <h1
+                    style={{
+                      fontSize: "7v"+direction,
+                      color: "black"
+                    }}
+                  >
+                    Joseph Antony
+                  </h1>
+                </span>
+              </ParallaxBanner>
             </div>
-            <br />
-            <br />
-            <Plx className={styles.customChild}
+          </Fade>
+          <div className="resume">
+            <Fade>
+              <div style={{ verticalAlign: "middle" }}>
+                <Plx
+                  style={{
+                    width: "fit-content",
+                    display: "inline-block",
+                    verticalAlign: "middle"
+                  }}
+                  parallaxData={[
+                    {
+                      start: 0.45 * this.state.height,
+                      end: 0.9 * this.state.height,
+                      easing: "ease",
+                      properties: [
+                        {
+                          startValue: 0,
+                          endValue: -this.state.width + this.state.width * 0.95,
+                          property: "translateX"
+                        }
+                      ]
+                    }
+                  ]}
+                >
+                  <img
+                    src={Logo}
+                    alt={Logo}
+                    style={{
+                      height:
+                        "20v"+direction
+                    }}
+                  />
+                </Plx>
+
+                <Plx
+                  style={{
+                    width: "fit-content",
+                    display: "inline-block",
+                    verticalAlign: "middle"
+                  }}
+                  parallaxData={[
+                    {
+                      start: 0.45 * this.state.height,
+                      end: 0.9 * this.state.height,
+                      easing: "ease",
+                      properties: [
+                        {
+                          startValue: 0,
+                          endValue: this.state.width - this.state.width * 0.95,
+                          property: "translateX"
+                        }
+                      ]
+                    }
+                  ]}
+                >
+                  <h1
+                    style={{
+                      fontSize: "9v"+direction,
+                      fontWeight: "lighter",
+                      color: " #22a39f"
+                    }}
+                  >
+                    Experience
+                  </h1>
+                </Plx>
+              </div>
+            </Fade>
+
+            <Plx
+              className="separate"
               parallaxData={[
                 {
-                  start: 0.45 * this.state.height,
+                  start: 0.55 * this.state.height,
                   end: 0.9 * this.state.height,
+                  easing: "ease",
                   properties: [
                     {
                       startValue: 0,
-                      endValue: -this.state.width + this.state.width * 0.7,
-                      property: "translateX"
+                      endValue: 1,
+                      property: "scaleX"
                     }
                   ]
                 }
               ]}
             >
-              <img src={Logo} alt={Logo} style={{ height: "20vh" }} />
+              <hr className="separate" />
             </Plx>
 
-            <br/><br/>
-
-
-            <img src={Logo} alt={Logo} style={{ height: "100vh" }} />
+            <Fade>
+              <Resume />
+            </Fade>
+            <img src={Logo} alt={Logo} />
           </div>
-        </Fade>
+        </div>
       </ParallaxProvider>
     );
   }
