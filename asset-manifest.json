@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/static/css/main.507977d1.chunk.css",
-    "main.js": "/static/js/main.4d6bc4bd.chunk.js",
-    "main.js.map": "/static/js/main.4d6bc4bd.chunk.js.map",
+    "main.js": "/static/js/main.80be5dad.chunk.js",
+    "main.js.map": "/static/js/main.80be5dad.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
     "static/js/2.1019dc90.chunk.js": "/static/js/2.1019dc90.chunk.js",
     "static/js/2.1019dc90.chunk.js.map": "/static/js/2.1019dc90.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.43715610539ccc2bd4466dfb5c7c2bf1.js": "/precache-manifest.43715610539ccc2bd4466dfb5c7c2bf1.js",
+    "precache-manifest.4464ac3bc16f3656874b4568e16412fd.js": "/precache-manifest.4464ac3bc16f3656874b4568e16412fd.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.507977d1.chunk.css.map": "/static/css/main.507977d1.chunk.css.map",
     "static/media/JA_Logo.svg": "/static/media/JA_Logo.6284c2a8.svg",
     "static/media/bg.png": "/static/media/bg.29482003.png",
     "static/media/fg.png": "/static/media/fg.3f0d573a.png",
-    "static/media/m1.png": "/static/media/m1.b2ae6ad5.png",
-    "static/media/m2.png": "/static/media/m2.3f95c64a.png"
+    "static/media/m1-min.png": "/static/media/m1-min.9effe053.png",
+    "static/media/m2-min.png": "/static/media/m2-min.e413c9fd.png"
   }
 }
