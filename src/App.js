@@ -96,9 +96,10 @@ class App extends React.Component {
                   }}
                   parallaxData={[
                     {
-                      start: 0.45 * this.state.height,
-                      end: 0.9 * this.state.height,
+                      start: "self",
+                      duration: "40%",
                       easing: "ease",
+                      startOffset: "10%",
                       properties: [
                         {
                           startValue: 0,
@@ -127,9 +128,10 @@ class App extends React.Component {
                   }}
                   parallaxData={[
                     {
-                      start: 0.45 * this.state.height,
-                      end: 0.9 * this.state.height,
+                      start: "self",
+                      duration: "40%",
                       easing: "ease",
+                      startOffset: "10%",
                       properties: [
                         {
                           startValue: 0,
@@ -157,8 +159,8 @@ class App extends React.Component {
               className="separate"
               parallaxData={[
                 {
-                  start: 0.55 * this.state.height,
-                  end: 0.9 * this.state.height,
+                  start: "self",
+                  duration: "10%",
                   easing: "ease",
                   properties: [
                     {

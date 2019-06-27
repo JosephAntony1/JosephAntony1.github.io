@@ -2,13 +2,14 @@
   color: #22a39f;
   text-align: left;
   width: 20vw;
-  float:left; display:inline;
+  float:left;
 }
 
 .experiences {
-  width: 70vw;
+  width: 78vw;
   display: inline-block;
-  height: fit-content
+  height: fit-content;
+
 }
 
 
@@ -19,10 +20,12 @@
 
 .experience {
   color: #22a39f;
+  margin-bottom: 3em;
+  overflow: auto;
 }
 
 .work{
   width: 50vw;
   text-align: left;
-  float:right;
+  float: right;
 }

@@ -17,6 +17,7 @@ class Resume extends React.Component {
           company="Solstice Consulting"
         />
         <Experience title="Android Developer" company="WMUC" />
+        <br/>
       </div>
     );
   }
