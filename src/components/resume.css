@@ -12,7 +12,6 @@
 
 }
 
-
 .company{
   color:gray;
   font-size: 1em;
@@ -28,4 +27,25 @@
   width: 50vw;
   text-align: left;
   float: right;
+}
+
+@media only screen and (max-width: 600px) {
+  .experiences {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .resumeTitle {
+    color: #22a39f;
+    text-align: center;
+    width: 100vw;
+  }
+
+  .work{
+    width: 80%;
+    text-align: left;
+    margin: 0 auto;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 }

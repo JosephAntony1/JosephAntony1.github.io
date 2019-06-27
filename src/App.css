@@ -3,18 +3,23 @@
   overflow: hidden;
 }
 
-.resume{
+.resume {
   background-color: rgb(243, 239, 224);
   padding-top: 1em;
 }
 
-.separate{
+.separate {
   color: gray;
   background-color: gray;
   margin-bottom: 2em;
   margin-left: 10vw;
   margin-right: 10vw;
-  height:1px;
+  height: 1px;
   border: none;
   transform: scaleX(0);
+}
+@media only screen and (max-width: 600px) {
+  .slideyTitle {
+    opacity: 0;
+  }
 }

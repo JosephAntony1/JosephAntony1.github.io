@@ -1,6 +1,7 @@
 import React from "react";
 import "./resume.css";
 import Experience from "./experience.js";
+import Separator from "./separator.js";
 class Resume extends React.Component {
   render() {
     const leidosInfo = [
@@ -9,15 +10,34 @@ class Resume extends React.Component {
       "Using AlanNLP trained on the SQUAD dataset to develop a natural language procesing conversational UX for Leidos employees and customers to easily converse with and get their questions answered more easily."
     ];
 
+    const solsticeInfo = [
+      "Created a neural network capable of reading the American Sign Language alphabet using cutting edge Single Shot Detection via Tensorflow, working under a Scrum Agile Methodology; project was demoed at Google’s Cloud Next conference",
+      "Developed a V0.1 version of a website to host the technology for anyone to interact with it using React.js"
+    ];
+
+    const wmucInfo = [
+      "Created and maintain an app for listening to the school’s radio station with plans to expand to a database for all local shows",
+      "Managed a team of 4 developers using an agile development framework"
+    ];
+
     return (
       <div className="experiences">
-        <Experience title="Software Engineer" company="Leidos" info={leidosInfo}/>
+        <Experience
+          title="Software Engineer"
+          company="Leidos"
+          info={leidosInfo}
+        />
+        <Separator />
+
         <Experience
           title="Software Engineering Intern"
           company="Solstice Consulting"
+          info={solsticeInfo}
         />
+        <Separator />
+
         <Experience title="Android Developer" company="WMUC" />
-        <br/>
+        <br />
       </div>
     );
   }

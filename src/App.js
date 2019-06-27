@@ -13,6 +13,7 @@ import Logo from "./JA_Logo.svg";
 import styles from "./ParallaxBanner.scss";
 import Plx from "react-plx";
 import Resume from "./components/resume.js";
+import Separator from "./components/separator.js";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -31,6 +32,130 @@ class App extends React.Component {
 
   updateWindowDimensions() {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
+
+  slideyTitle() {
+    let direction;
+    if (this.state.width > this.state.height) {
+      direction = "w";
+    } else {
+      direction = "h";
+    }
+    if (this.state.width > 600) {
+      return (
+        <div>
+          {" "}
+          <Plx
+            style={{
+              width: "fit-content",
+              display: "inline-block",
+              verticalAlign: "middle"
+            }}
+            parallaxData={[
+              {
+                start: "self",
+                duration: "40%",
+                easing: "ease",
+                startOffset: "10%",
+                properties: [
+                  {
+                    startValue: 0,
+                    endValue: -this.state.width + this.state.width * 0.95,
+                    property: "translateX"
+                  }
+                ]
+              }
+            ]}
+          >
+            <img
+              src={Logo}
+              alt={Logo}
+              style={{
+                height: "20v" + direction
+              }}
+            />
+          </Plx>
+          <Plx
+            style={{
+              width: "fit-content",
+              display: "inline-block",
+              verticalAlign: "middle"
+            }}
+            parallaxData={[
+              {
+                start: "self",
+                duration: "40%",
+                easing: "ease",
+                startOffset: "10%",
+                properties: [
+                  {
+                    startValue: 0,
+                    endValue: this.state.width - this.state.width * 0.95,
+                    property: "translateX"
+                  }
+                ]
+              }
+            ]}
+          >
+            <h1
+              style={{
+                fontSize: "9v" + direction,
+                fontWeight: "lighter",
+                color: " #22a39f"
+              }}
+            >
+              Experience
+            </h1>
+          </Plx>
+          );
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <Plx
+            className="slideyTitle"
+            style={{
+              width: "fit-content",
+              display: "inline-block",
+              verticalAlign: "middle"
+            }}
+            parallaxData={[
+              {
+                start: "self",
+                duration: "40%",
+                easing: "ease",
+                startOffset: "10%",
+                properties: [
+                  {
+                    startValue: 0,
+                    endValue: 1,
+                    property: "opacity"
+                  }
+                ]
+              }
+            ]}
+          >
+            <img
+              src={Logo}
+              alt={Logo}
+              style={{
+                height: "20v" + direction
+              }}
+            />
+            <h1
+              style={{
+                fontSize: "9v" + direction,
+                fontWeight: "lighter",
+                color: " #22a39f"
+              }}
+            >
+              Experience
+            </h1>
+          </Plx>
+        </div>
+      );
+    }
   }
   render() {
     const layers = [
@@ -71,11 +196,11 @@ class App extends React.Component {
                   <img
                     src={Logo}
                     alt={Logo}
-                    style={{ height: "25v"+direction }}
+                    style={{ height: "25v" + direction }}
                   />
                   <h1
                     style={{
-                      fontSize: "7v"+direction,
+                      fontSize: "7v" + direction,
                       color: "black"
                     }}
                   >
@@ -86,99 +211,14 @@ class App extends React.Component {
             </div>
           </Fade>
           <div className="resume">
-            <Fade>
-              <div style={{ verticalAlign: "middle" }}>
-                <Plx
-                  style={{
-                    width: "fit-content",
-                    display: "inline-block",
-                    verticalAlign: "middle"
-                  }}
-                  parallaxData={[
-                    {
-                      start: "self",
-                      duration: "40%",
-                      easing: "ease",
-                      startOffset: "10%",
-                      properties: [
-                        {
-                          startValue: 0,
-                          endValue: -this.state.width + this.state.width * 0.95,
-                          property: "translateX"
-                        }
-                      ]
-                    }
-                  ]}
-                >
-                  <img
-                    src={Logo}
-                    alt={Logo}
-                    style={{
-                      height:
-                        "20v"+direction
-                    }}
-                  />
-                </Plx>
+            <div style={{ verticalAlign: "middle" }}>{this.slideyTitle()}</div>
 
-                <Plx
-                  style={{
-                    width: "fit-content",
-                    display: "inline-block",
-                    verticalAlign: "middle"
-                  }}
-                  parallaxData={[
-                    {
-                      start: "self",
-                      duration: "40%",
-                      easing: "ease",
-                      startOffset: "10%",
-                      properties: [
-                        {
-                          startValue: 0,
-                          endValue: this.state.width - this.state.width * 0.95,
-                          property: "translateX"
-                        }
-                      ]
-                    }
-                  ]}
-                >
-                  <h1
-                    style={{
-                      fontSize: "9v"+direction,
-                      fontWeight: "lighter",
-                      color: " #22a39f"
-                    }}
-                  >
-                    Experience
-                  </h1>
-                </Plx>
-              </div>
-            </Fade>
-
-            <Plx
-              className="separate"
-              parallaxData={[
-                {
-                  start: "self",
-                  duration: "10%",
-                  easing: "ease",
-                  properties: [
-                    {
-                      startValue: 0,
-                      endValue: 1,
-                      property: "scaleX"
-                    }
-                  ]
-                }
-              ]}
-            >
-              <hr className="separate" />
-            </Plx>
+            <Separator />
 
             <Fade>
               <Resume />
             </Fade>
-            <img src={Logo} alt={Logo} />
+            <Separator />
           </div>
         </div>
       </ParallaxProvider>
