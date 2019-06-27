@@ -21,6 +21,75 @@ class App extends React.Component {
     this.state = { width: 0, height: 0, margin: 0 };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
+
+  render() {
+    const layers = [
+      {
+        image: BG,
+        amount: 0.6
+      },
+      {
+        image: M2,
+        amount: 0.5
+      },
+      {
+        image: M1,
+        amount: 0.3
+      },
+      {
+        image: FG,
+        amount: 0.2
+      }
+    ];
+    let direction;
+    if (this.state.width > this.state.height) {
+      direction = "w";
+    } else {
+      direction = "h";
+    }
+    return (
+      <ParallaxProvider>
+        <div className="App  ms-Fabric">
+          <Fade>
+            <div className={styles.bannerContainer}>
+              <ParallaxBanner
+                className={styles.bannerBg}
+                layers={layers}
+                style={{ height: "100vh" }}
+              >
+                <span className="parallaxChildren ms-font-su">
+                  <img
+                    src={Logo}
+                    alt={Logo}
+                    style={{ height: "25v" + direction }}
+                  />
+                  <h1
+                    style={{
+                      fontSize: "7v" + direction,
+                      color: "black"
+                    }}
+                  >
+                    Joseph Antony
+                  </h1>
+                </span>
+              </ParallaxBanner>
+            </div>
+          </Fade>
+          <div className="resume">
+            <div style={{ verticalAlign: "middle" }}>{this.slideyTitle()}</div>
+
+            <Separator />
+
+            <Fade>
+              <Resume />
+            </Fade>
+            <Separator />
+          </div>
+        </div>
+      </ParallaxProvider>
+    );
+  }
+
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener("resize", this.updateWindowDimensions);
@@ -155,73 +224,6 @@ class App extends React.Component {
         </div>
       );
     }
-  }
-  render() {
-    const layers = [
-      {
-        image: BG,
-        amount: 0.6
-      },
-      {
-        image: M2,
-        amount: 0.4
-      },
-      {
-        image: M1,
-        amount: 0.3
-      },
-      {
-        image: FG,
-        amount: 0.2
-      }
-    ];
-    let direction;
-    if (this.state.width > this.state.height) {
-      direction = "w";
-    } else {
-      direction = "h";
-    }
-    return (
-      <ParallaxProvider>
-        <div className="App  ms-Fabric">
-          <Fade>
-            <div className={styles.bannerContainer}>
-              <ParallaxBanner
-                className={styles.bannerBg}
-                layers={layers}
-                style={{ height: "100vh" }}
-              >
-                <span className="parallaxChildren ms-font-su">
-                  <img
-                    src={Logo}
-                    alt={Logo}
-                    style={{ height: "25v" + direction }}
-                  />
-                  <h1
-                    style={{
-                      fontSize: "7v" + direction,
-                      color: "black"
-                    }}
-                  >
-                    Joseph Antony
-                  </h1>
-                </span>
-              </ParallaxBanner>
-            </div>
-          </Fade>
-          <div className="resume">
-            <div style={{ verticalAlign: "middle" }}>{this.slideyTitle()}</div>
-
-            <Separator />
-
-            <Fade>
-              <Resume />
-            </Fade>
-            <Separator />
-          </div>
-        </div>
-      </ParallaxProvider>
-    );
   }
 }
 
