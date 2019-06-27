@@ -1,10 +1,6 @@
 import React from "react";
 import "./resume.css";
 class Experience extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   bullets() {
     let text = [];
     console.log(this.props.info);
@@ -17,12 +13,17 @@ class Experience extends React.Component {
   render() {
     return (
       <div className="experience">
-      <span>
-        <div className="resumeTitle">
-          <h2>{this.props.title}</h2>
-          <h5 className="company">{this.props.company}</h5>
-        </div>
-        <div className="work">{this.bullets()}</div>
+        <span>
+          <div className="jobTitle">
+            <h2>{this.props.title}</h2>
+            <span>
+              <h5 className="company">{this.props.company} </h5>
+              <h6 className="date">
+                <i>{this.props.date}</i>
+              </h6>
+            </span>
+          </div>
+          <div className="work">{this.bullets()}</div>
         </span>
       </div>
     );

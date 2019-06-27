@@ -1,20 +1,20 @@
-.resumeTitle {
+.jobTitle {
   color: #22a39f;
   text-align: left;
-  width: 20vw;
-  float:left;
+  width: 23vw;
+  float: left;
 }
 
 .experiences {
   width: 78vw;
   display: inline-block;
   height: fit-content;
-
 }
 
-.company{
-  color:gray;
+.company {
+  color: gray;
   font-size: 1em;
+  display: inline;
 }
 
 .experience {
@@ -23,10 +23,13 @@
   overflow: auto;
 }
 
-.work{
+.work {
   width: 50vw;
   text-align: left;
   float: right;
+}
+.date {
+  display: inline-block;
 }
 
 @media only screen and (max-width: 600px) {
@@ -35,13 +38,13 @@
     width: 100%;
     text-align: center;
   }
-  .resumeTitle {
+  .jobTitle {
     color: #22a39f;
     text-align: center;
     width: 100vw;
   }
 
-  .work{
+  .work {
     width: 80%;
     text-align: left;
     margin: 0 auto;

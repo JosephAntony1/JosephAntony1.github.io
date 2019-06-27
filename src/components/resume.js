@@ -26,6 +26,7 @@ class Resume extends React.Component {
           title="Software Engineer"
           company="Leidos"
           info={leidosInfo}
+          date="(June 2017 - Present)"
         />
         <Separator />
 
@@ -33,10 +34,16 @@ class Resume extends React.Component {
           title="Software Engineering Intern"
           company="Solstice Consulting"
           info={solsticeInfo}
+          date="(June 2018 - August 2018)"
         />
         <Separator />
 
-        <Experience title="Android Developer" company="WMUC" />
+        <Experience
+          title="Android Developer"
+          company="WMUC"
+          info={wmucInfo}
+          date="(November 2016 – May 2017)"
+        />
         <br />
       </div>
     );

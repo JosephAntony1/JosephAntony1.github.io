@@ -107,7 +107,6 @@ class App extends React.Component {
               Experience
             </h1>
           </Plx>
-          );
         </div>
       );
     } else {
