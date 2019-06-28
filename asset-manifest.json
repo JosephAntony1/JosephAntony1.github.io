@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/static/css/main.479f5e03.chunk.css",
-    "main.js": "/static/js/main.b70bc9f2.chunk.js",
-    "main.js.map": "/static/js/main.b70bc9f2.chunk.js.map",
+    "main.js": "/static/js/main.30339623.chunk.js",
+    "main.js.map": "/static/js/main.30339623.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
     "static/js/2.074f37f4.chunk.js": "/static/js/2.074f37f4.chunk.js",
     "static/js/2.074f37f4.chunk.js.map": "/static/js/2.074f37f4.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.d65a61f5af29701fa551fcc65866bf78.js": "/precache-manifest.d65a61f5af29701fa551fcc65866bf78.js",
+    "precache-manifest.bfcf7e997c547dede8c23f389565857e.js": "/precache-manifest.bfcf7e997c547dede8c23f389565857e.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.479f5e03.chunk.css.map": "/static/css/main.479f5e03.chunk.css.map",
     "static/media/1-min.png": "/static/media/1-min.01babc06.png",
     "static/media/2-min.png": "/static/media/2-min.1353e216.png",
     "static/media/3-min.png": "/static/media/3-min.7f906a9f.png",
-    "static/media/4-min.png": "/static/media/4-min.30b50bca.png",
+    "static/media/4-min.png": "/static/media/4-min.40552322.png",
     "static/media/5-min.png": "/static/media/5-min.4fb3892d.png",
-    "static/media/6.png": "/static/media/6.39f5f1ad.png",
+    "static/media/6-min.png": "/static/media/6-min.de22f1bc.png",
     "static/media/JA_Logo.svg": "/static/media/JA_Logo.6284c2a8.svg"
   }
 }
