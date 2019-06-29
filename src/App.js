@@ -5,15 +5,18 @@ import { CSSTransitionGroup } from "react-transition-group"; // ES6
 import Fade from "react-reveal/Fade";
 import ScrollableAnchor from "react-scrollable-anchor";
 import { ParallaxProvider, ParallaxBanner } from "react-scroll-parallax";
-import BG from "./images/bg.png";
-import FG from "./images/fg.png";
-import M1 from "./images/m1-min.png";
-import M2 from "./images/m2-min.png";
 import Logo from "./JA_Logo.svg";
 import styles from "./ParallaxBanner.scss";
 import Plx from "react-plx";
 import Resume from "./components/resume.js";
 import Separator from "./components/separator.js";
+import Layer1 from "./images/1-min.png";
+import Layer2 from "./images/2-min.png";
+import Layer3 from "./images/3-min.png";
+import Layer4 from "./images/4-min.png";
+import Layer5 from "./images/5-min.png";
+import Layer6 from "./images/6.png";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -25,20 +28,28 @@ class App extends React.Component {
   render() {
     const layers = [
       {
-        image: BG,
-        amount: 0.6
+        image: Layer6,
+        amount: .85,
       },
       {
-        image: M2,
-        amount: 0.5
+        image: Layer5,
+        amount: .6
       },
       {
-        image: M1,
-        amount: 0.3
+        image: Layer4,
+        amount: .5
       },
       {
-        image: FG,
-        amount: 0.2
+        image: Layer3,
+        amount: .4
+      },
+      {
+        image: Layer2,
+        amount: .3
+      },
+      {
+        image: Layer1,
+        amount: .2
       }
     ];
     let direction;
@@ -57,7 +68,7 @@ class App extends React.Component {
                 layers={layers}
                 style={{ height: "100vh" }}
               >
-                <span className="parallaxChildren ms-font-su">
+                <div className="parallaxChildren ms-font-su">
                   <img
                     src={Logo}
                     alt={Logo}
@@ -66,12 +77,13 @@ class App extends React.Component {
                   <h1
                     style={{
                       fontSize: "7v" + direction,
-                      color: "black"
+                      color: "white",
+                      margin:"0"
                     }}
                   >
                     Joseph Antony
                   </h1>
-                </span>
+                </div>
               </ParallaxBanner>
             </div>
           </Fade>
@@ -96,6 +108,7 @@ class App extends React.Component {
   }
 
   componentWillUnmount() {
+    this._ismounted = false;
     window.removeEventListener("resize", this.updateWindowDimensions);
   }
 
@@ -110,7 +123,7 @@ class App extends React.Component {
     } else {
       direction = "h";
     }
-    if (this.state.width > 600) {
+    if (this.state.width > 768) {
       return (
         <div>
           {" "}

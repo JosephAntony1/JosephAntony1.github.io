@@ -3,9 +3,8 @@ import "./resume.css";
 class Experience extends React.Component {
   bullets() {
     let text = [];
-    console.log(this.props.info);
     for (let bullet in this.props.info) {
-      text.push(<li>{this.props.info[bullet]}</li>);
+      text.push(<li style={{marginBlockStart:" 0.83em"}} key={bullet}>{this.props.info[bullet]}</li>);
     }
     return text;
   }
