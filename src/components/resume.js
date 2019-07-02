@@ -22,6 +22,8 @@ class Resume extends React.Component {
 
     return (
       <div className="experiences">
+        <Separator />
+
         <Experience
           title="Software Engineer"
           company="Leidos"

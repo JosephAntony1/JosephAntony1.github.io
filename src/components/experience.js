@@ -1,5 +1,6 @@
 import React from "react";
 import "./resume.css";
+import "../App.css";
 class Experience extends React.Component {
   bullets() {
     let text = [];
@@ -11,7 +12,7 @@ class Experience extends React.Component {
 
   render() {
     return (
-      <div className="experience">
+      <div className="experience  main-color">
         <span>
           <div className="jobTitle">
             <h2>{this.props.title}</h2>

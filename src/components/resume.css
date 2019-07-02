@@ -1,5 +1,4 @@
 .jobTitle {
-  color: #22a39f;
   text-align: left;
   width: 25vw;
   float: left;
@@ -18,8 +17,7 @@
 }
 
 .experience {
-  color: #22a39f;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
   overflow: auto;
 }
 
@@ -32,6 +30,9 @@
   display: inline-block;
 }
 
+li{
+  margin-bottom: 1vh;
+}
 @media only screen and (max-width: 600px) {
   .experiences {
     display: block;

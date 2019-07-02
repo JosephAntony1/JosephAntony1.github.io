@@ -1,10 +1,11 @@
 .App {
   text-align: center;
   overflow: hidden;
+  background-color: rgb(243, 239, 224);
+
 }
 
 .resume {
-  background-color: rgb(243, 239, 224);
   padding-top: 1em;
 }
 
@@ -18,6 +19,16 @@
   border: none;
   transform: scaleX(0);
 }
+
+.main-color{
+  color: #800000;
+}
+.center-vert{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 @media only screen and (max-width: 600px) {
   .slideyTitle {
     opacity: 0;

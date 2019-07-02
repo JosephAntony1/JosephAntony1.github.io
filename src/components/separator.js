@@ -10,7 +10,7 @@ class Separator extends React.Component {
             start: "self",
             duration: "15%",
             easing: "ease",
-            startOffset: "10%",
+            startOffset: "5%",
             properties: [
               {
                 startValue: 0,

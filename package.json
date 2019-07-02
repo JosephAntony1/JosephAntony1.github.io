@@ -12,10 +12,9 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
     "react-scroll-parallax": "^2.1.2",
-    "react-scrollable-anchor": "^0.6.1",
     "react-transition-group": "^1.2.1",
-    "react-typing-animation": "^1.6.2",
-    "serve": "^11.0.0"
+    "serve": "^11.0.0",
+    "typeit": "^6.0.3"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,15 +1,13 @@
 import React from "react";
 import "./App.css";
-import Typing from "react-typing-animation";
-import { CSSTransitionGroup } from "react-transition-group"; // ES6
 import Fade from "react-reveal/Fade";
-import ScrollableAnchor from "react-scrollable-anchor";
 import { ParallaxProvider, ParallaxBanner } from "react-scroll-parallax";
 import Logo from "./JA_Logo.svg";
 import styles from "./ParallaxBanner.scss";
 import Plx from "react-plx";
 import Resume from "./components/resume.js";
 import Separator from "./components/separator.js";
+import AboutMe from "./components/aboutMe.js";
 import Layer1 from "./images/1-min.png";
 import Layer2 from "./images/2-min.png";
 import Layer3 from "./images/3-min.png";
@@ -29,27 +27,27 @@ class App extends React.Component {
     const layers = [
       {
         image: Layer6,
-        amount: .85,
+        amount: 0.85
       },
       {
         image: Layer5,
-        amount: .6
+        amount: 0.6
       },
       {
         image: Layer4,
-        amount: .5
+        amount: 0.5
       },
       {
         image: Layer3,
-        amount: .4
+        amount: 0.4
       },
       {
         image: Layer2,
-        amount: .3
+        amount: 0.3
       },
       {
         image: Layer1,
-        amount: .2
+        amount: 0.2
       }
     ];
     let direction;
@@ -78,7 +76,7 @@ class App extends React.Component {
                     style={{
                       fontSize: "7v" + direction,
                       color: "white",
-                      margin:"0"
+                      margin: "0"
                     }}
                   >
                     Joseph Antony
@@ -87,10 +85,13 @@ class App extends React.Component {
               </ParallaxBanner>
             </div>
           </Fade>
+
+          <AboutMe />
+
+          <Separator />
+
           <div className="resume">
             <div style={{ verticalAlign: "middle" }}>{this.slideyTitle()}</div>
-
-            <Separator />
 
             <Fade>
               <Resume />
@@ -157,7 +158,7 @@ class App extends React.Component {
               }}
             />
           </Plx>
-          <Plx
+          <Plx className="main-color"
             style={{
               width: "fit-content",
               display: "inline-block",
@@ -183,7 +184,6 @@ class App extends React.Component {
               style={{
                 fontSize: "9v" + direction,
                 fontWeight: "lighter",
-                color: " #22a39f"
               }}
             >
               Experience
@@ -195,7 +195,7 @@ class App extends React.Component {
       return (
         <div>
           <Plx
-            className="slideyTitle"
+            className="slideyTitle main-color"
             style={{
               width: "fit-content",
               display: "inline-block",
@@ -228,7 +228,6 @@ class App extends React.Component {
               style={{
                 fontSize: "9v" + direction,
                 fontWeight: "lighter",
-                color: " #22a39f"
               }}
             >
               Experience
