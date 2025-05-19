@@ -25,9 +25,11 @@ class AboutMe extends React.Component {
             strings={[
               "Software Engineer",
               "Web Developer",
-              "Machine Learning Enthusiast",
+              "Machine Learning Engineer",
               "Amateur Photographer",
               "Mediocre musician",
+              "Engineering Enthusiast",
+              "Markerspace affecianado", 
               "Dog Lover",
               "Dog Owner",
               "Actually a dog",

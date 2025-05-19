@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Fade from "react-reveal/Fade";
 import { ParallaxProvider, ParallaxBanner } from "react-scroll-parallax";
@@ -15,228 +15,114 @@ import Layer4 from "./images/4-min.png";
 import Layer5 from "./images/5-min.png";
 import Layer6 from "./images/6.png";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.scrollPane = React.createRef();
-    this.state = { width: 0, height: 0, margin: 0 };
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-  }
+const layers = [
+  { image: Layer6, amount: 0.85 },
+  { image: Layer5, amount: 0.6 },
+  { image: Layer4, amount: 0.5 },
+  { image: Layer3, amount: 0.4 },
+  { image: Layer2, amount: 0.3 },
+  { image: Layer1, amount: 0.2 },
+];
 
-  render() {
-    const layers = [
-      {
-        image: Layer6,
-        amount: 0.85
-      },
-      {
-        image: Layer5,
-        amount: 0.6
-      },
-      {
-        image: Layer4,
-        amount: 0.5
-      },
-      {
-        image: Layer3,
-        amount: 0.4
-      },
-      {
-        image: Layer2,
-        amount: 0.3
-      },
-      {
-        image: Layer1,
-        amount: 0.2
-      }
-    ];
-    let direction;
-    if (this.state.width > this.state.height) {
-      direction = "w";
-    } else {
-      direction = "h";
-    }
+function App() {
+  const [dimensions, setDimensions] = useState({ width: window.innerWidth, height: window.innerHeight });
+
+  const updateDimensions = () => {
+    setDimensions({ width: window.innerWidth, height: window.innerHeight });
+  };
+
+  useEffect(() => {
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
+
+  const direction = dimensions.width > dimensions.height ? "w" : "h";
+  const isMobile = dimensions.width <= 768;
+
+  const renderSlideyTitle = () => {
+    const sharedStyles = {
+      width: "fit-content",
+      display: "inline-block",
+      verticalAlign: "middle",
+    };
+
+    const parallaxTranslateX = {
+      start: "self",
+      duration: "40%",
+      easing: "ease",
+      startOffset: "10%",
+      properties: [
+        {
+          startValue: 0,
+          endValue: dimensions.width - dimensions.width * 0.95,
+          property: "translateX",
+        },
+      ],
+    };
+
+    const mobileParallax = {
+      start: "self",
+      duration: "40%",
+      easing: "ease",
+      startOffset: "10%",
+      properties: [{ startValue: 0, endValue: 1, property: "opacity" }],
+    };
+
     return (
-      <ParallaxProvider>
-        <div className="App  ms-Fabric">
-          <Fade>
-            <div className={styles.bannerContainer}>
-              <ParallaxBanner
-                className={styles.bannerBg}
-                layers={layers}
-                style={{ height: "100vh" }}
-              >
-                <div className="parallaxChildren ms-font-su">
-                  <img
-                    src={Logo}
-                    alt={Logo}
-                    style={{ height: "25v" + direction }}
-                  />
-                  <h1
-                    style={{
-                      fontSize: "7v" + direction,
-                      color: "white",
-                      margin: "0"
-                    }}
-                  >
-                    Joseph Antony
-                  </h1>
-                </div>
-              </ParallaxBanner>
-            </div>
-          </Fade>
-
-          <AboutMe />
-
-          <Separator />
-
-          <div className="resume">
-            <div style={{ verticalAlign: "middle" }}>{this.slideyTitle()}</div>
-
-            <Fade>
-              <Resume />
-            </Fade>
-            <Separator />
-          </div>
-        </div>
-      </ParallaxProvider>
+      <div>
+        <Plx
+          style={sharedStyles}
+          parallaxData={[isMobile ? mobileParallax : { ...parallaxTranslateX, properties: [{ ...parallaxTranslateX.properties[0], endValue: -dimensions.width + dimensions.width * 0.95 }] }]}
+        >
+          <img src={Logo} alt="logo" style={{ height: `20v${direction}` }} />
+        </Plx>
+        <Plx
+          className="main-color"
+          style={sharedStyles}
+          parallaxData={[isMobile ? mobileParallax : parallaxTranslateX]}
+        >
+          <h1 style={{ fontSize: `9v${direction}`, fontWeight: "lighter" }}>
+            Experience
+          </h1>
+        </Plx>
+      </div>
     );
-  }
+  };
 
-  componentDidMount() {
-    this.updateWindowDimensions();
-    window.addEventListener("resize", this.updateWindowDimensions);
-  }
-
-  componentWillUnmount() {
-    this._ismounted = false;
-    window.removeEventListener("resize", this.updateWindowDimensions);
-  }
-
-  updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
-  }
-
-  slideyTitle() {
-    let direction;
-    if (this.state.width > this.state.height) {
-      direction = "w";
-    } else {
-      direction = "h";
-    }
-    if (this.state.width > 768) {
-      return (
-        <div>
-          {" "}
-          <Plx
-            style={{
-              width: "fit-content",
-              display: "inline-block",
-              verticalAlign: "middle"
-            }}
-            parallaxData={[
-              {
-                start: "self",
-                duration: "40%",
-                easing: "ease",
-                startOffset: "10%",
-                properties: [
-                  {
-                    startValue: 0,
-                    endValue: -this.state.width + this.state.width * 0.95,
-                    property: "translateX"
-                  }
-                ]
-              }
-            ]}
-          >
-            <img
-              src={Logo}
-              alt={Logo}
-              style={{
-                height: "20v" + direction
-              }}
-            />
-          </Plx>
-          <Plx className="main-color"
-            style={{
-              width: "fit-content",
-              display: "inline-block",
-              verticalAlign: "middle"
-            }}
-            parallaxData={[
-              {
-                start: "self",
-                duration: "40%",
-                easing: "ease",
-                startOffset: "10%",
-                properties: [
-                  {
-                    startValue: 0,
-                    endValue: this.state.width - this.state.width * 0.95,
-                    property: "translateX"
-                  }
-                ]
-              }
-            ]}
-          >
-            <h1
-              style={{
-                fontSize: "9v" + direction,
-                fontWeight: "lighter",
-              }}
+  return (
+    <ParallaxProvider>
+      <div className="App ms-Fabric">
+        <Fade>
+          <div className={styles.bannerContainer}>
+            <ParallaxBanner
+              className={styles.bannerBg}
+              layers={layers}
+              style={{ height: "100vh" }}
             >
-              Experience
-            </h1>
-          </Plx>
+              <div className="parallaxChildren ms-font-su">
+                <img src={Logo} alt="logo" style={{ height: `25v${direction}` }} />
+                <h1 style={{ fontSize: `7v${direction}`, color: "white", margin: 0 }}>
+                  Joseph Antony
+                </h1>
+              </div>
+            </ParallaxBanner>
+          </div>
+        </Fade>
+
+        <AboutMe />
+        <Separator />
+
+        <div className="resume">
+          <div style={{ verticalAlign: "middle" }}>{renderSlideyTitle()}</div>
+          <Fade>
+            <Resume />
+          </Fade>
+          <Separator />
         </div>
-      );
-    } else {
-      return (
-        <div>
-          <Plx
-            className="slideyTitle main-color"
-            style={{
-              width: "fit-content",
-              display: "inline-block",
-              verticalAlign: "middle"
-            }}
-            parallaxData={[
-              {
-                start: "self",
-                duration: "40%",
-                easing: "ease",
-                startOffset: "10%",
-                properties: [
-                  {
-                    startValue: 0,
-                    endValue: 1,
-                    property: "opacity"
-                  }
-                ]
-              }
-            ]}
-          >
-            <img
-              src={Logo}
-              alt={Logo}
-              style={{
-                height: "20v" + direction
-              }}
-            />
-            <h1
-              style={{
-                fontSize: "9v" + direction,
-                fontWeight: "lighter",
-              }}
-            >
-              Experience
-            </h1>
-          </Plx>
-        </div>
-      );
-    }
-  }
+      </div>
+    </ParallaxProvider>
+  );
 }
 
 export default App;
