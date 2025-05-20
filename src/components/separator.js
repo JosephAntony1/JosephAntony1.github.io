@@ -8,7 +8,7 @@ class Separator extends React.Component {
         parallaxData={[
           {
             start: "self",
-            duration: "15%",
+            duration: "5%",
             easing: "ease",
             startOffset: "5%",
             properties: [

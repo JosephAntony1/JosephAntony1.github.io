@@ -9,7 +9,7 @@ const Resume = () => {
     "Led the implementation of a non-LLM-based few-shot active learning algorithm to generate domain-specific datasets for cost-effective LLM fine-tuning.",
     "Standardized client-specific ML models into a unified pipeline, ensuring scalability and consistency across analyses.",
     "Managed MLOps workflows including model deployment and serving, LLM enablement via Amazon Bedrock, Dockerization, CI/CD setup, and production model monitoring.",
-    "Implemented a range of classification techniques—from linear regression and HDBSCAN to spaCy transformers and Bedrock LLMs—to analyze and automate insights from text."
+    "Implemented a range of classification techniques, from linear regression and HDBSCAN to spaCy transformers and Bedrock LLMs, to analyze and automate insights from text."
   ];
 
   const alethixInfo = [

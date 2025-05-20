@@ -5,10 +5,11 @@
   right: 0;
   bottom: 0;
   padding-left: 20em;
-  display: block;
+  display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
+  z-index: 10;
 }
 
 .bannerContainer {
@@ -20,21 +21,6 @@
 
 .bannerBg {
   background: #fff;
-}
-
-.customChild {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1000;
-  text-align: center;
-}
-
-@media only screen and (max-width: 600px) {
-  .parallaxChildren {
-    padding-left: 0;
-    padding-top: 3em;
-  }
+  position: relative;
+  overflow: hidden;
 }

@@ -22,22 +22,31 @@ class AboutMe extends React.Component {
       >
         <div className="center-vert main-color">
           <Type
-            strings={[
-              "Software Engineer",
-              "Web Developer",
-              "Machine Learning Engineer",
-              "Amateur Photographer",
-              "Mediocre musician",
-              "Engineering Enthusiast",
-              "Markerspace affecianado", 
-              "Dog Lover",
-              "Dog Owner",
-              "Actually a dog",
-              "Just kidding.",
-              "Or am I?",
-              "I hope you're not still reading this",
-              "I put so much more in this site"
-            ]}
+          strings={[
+            "Software Engineer",
+            "Machine Learning Engineer",
+            "Build & Release Engineer",
+            "Web Developer",
+            "Full-Stack Tinkerer",
+            "NLP Enthusiast",
+            "CI/CD Automator",
+            "Docker Evangelist",
+            "Data Whisperer",
+            "Makerspace Aficionado",
+            "ESP32 Wrangler",
+            "LED Artist",
+            "Dog Lover",
+            "Dog Owner",
+            "Actually a dog",
+            "Just kidding.",
+            "Or am I?",
+            "You’ve read this far… impressive.",
+            "Bitwarden Fan",
+            "Chicago CTA Tracker Guy",
+            "Pythonic Problem Solver",
+            "Please hire me"
+          ]}
+
             loop={true}
             speed={100}
             lifeLike={true}

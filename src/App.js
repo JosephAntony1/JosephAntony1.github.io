@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import Fade from "react-reveal/Fade";
+import { Fade } from "react-awesome-reveal";
 import { ParallaxProvider, ParallaxBanner } from "react-scroll-parallax";
 import Logo from "./JA_Logo.svg";
 import styles from "./ParallaxBanner.scss";
@@ -9,19 +9,19 @@ import Resume from "./components/resume.js";
 import Separator from "./components/separator.js";
 import AboutMe from "./components/aboutMe.js";
 import Layer1 from "./images/1-min.png";
-import Layer2 from "./images/2-min.png";
+import Layer2 from "./images/2-min.webp";
 import Layer3 from "./images/3-min.png";
-import Layer4 from "./images/4-min.png";
+import Layer4 from "./images/4-min.webp";
 import Layer5 from "./images/5-min.png";
 import Layer6 from "./images/6.png";
 
 const layers = [
-  { image: Layer6, amount: 0.85 },
-  { image: Layer5, amount: 0.6 },
-  { image: Layer4, amount: 0.5 },
-  { image: Layer3, amount: 0.4 },
-  { image: Layer2, amount: 0.3 },
-  { image: Layer1, amount: 0.2 },
+    { image: Layer6, speed: -20 },
+    { image: Layer5, speed: -15 },
+    { image: Layer4, speed: -10 },
+    { image: Layer3, speed: -5 },
+    { image: Layer2, speed: 0 },
+    { image: Layer1, speed: 5 },
 ];
 
 function App() {
